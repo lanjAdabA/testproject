@@ -428,21 +428,18 @@ class _MyHomePageState extends State<MyHomePage> {
                             ],
                           ),
                           const SizedBox(
-                            height: 8,
+                            height: 12,
                           ),
                           Column(
                             children: [
+                              //! MANUAL TIMER
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
                                     children: [
-                                      Image.asset("assets/timer.png"), // Icon(
-                                      //   Icons.electrical_services_outlined,
-                                      //   size: 32,
-                                      //   color: Colors.amber,
-                                      // ),
+                                      Image.asset("assets/timer.png"),
                                       const Text(
                                         "   Manual Timer",
                                         style: TextStyle(
@@ -466,63 +463,84 @@ class _MyHomePageState extends State<MyHomePage> {
                                   )
                                 ],
                               ),
+                              const SizedBox(
+                                height: 12,
+                              ),
                               Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 20, right: 20, bottom: 10),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Radio(
-                                                activeColor: Colors.green,
-                                                value: VisualType.fiveMins,
-                                                groupValue: _timer,
-                                                onChanged: (value) {
-                                                  setState(() {
-                                                    _timer = value!;
-                                                  });
-                                                }),
-                                            const Text('05 mins'),
-                                          ],
-                                        ),
-                                        Row(
-                                          children: [
-                                            Radio(
-                                                materialTapTargetSize:
-                                                    MaterialTapTargetSize
-                                                        .shrinkWrap,
-                                                activeColor: Colors.green,
-                                                toggleable: true,
-                                                value: VisualType.tenMins,
-                                                groupValue: _timer,
-                                                onChanged: (value) {
-                                                  setState(() {
-                                                    _timer = value!;
-                                                  });
-                                                }),
-                                            const Text('10 mins'),
-                                          ],
-                                        ),
-                                        Row(
-                                          children: [
-                                            Radio(
-                                                activeColor: Colors.green,
-                                                value: VisualType.fifteenMins,
-                                                groupValue: _timer,
-                                                onChanged: (value) {
-                                                  setState(() {
-                                                    _timer = value!;
-                                                  });
-                                                }),
-                                            const Text('15 mins'),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
+                                  const SizedBox(
+                                    width: 12,
+                                  ),
+                                  // todo -> radiobutton 5mins
+                                  Row(
+                                    children: [
+                                      Transform.scale(
+                                        scale: 1.5,
+                                        child: Radio(
+                                            activeColor: Colors.green,
+                                            value: VisualType.fiveMins,
+                                            groupValue: _timer,
+                                            onChanged: (value) {
+                                              setState(() {
+                                                _timer = value!;
+                                              });
+                                            }),
+                                      ),
+                                      const Text(
+                                        '05 mins',
+                                        style: TextStyle(fontSize: 20),
+                                      ),
+                                    ],
+                                  ),
+                                  // todo -> radiobutton 10mins
+
+                                  Row(
+                                    children: [
+                                      Transform.scale(
+                                        scale: 1.5,
+                                        child: Radio(
+                                            materialTapTargetSize:
+                                                MaterialTapTargetSize
+                                                    .shrinkWrap,
+                                            activeColor: Colors.green,
+                                            toggleable: true,
+                                            value: VisualType.tenMins,
+                                            groupValue: _timer,
+                                            onChanged: (value) {
+                                              setState(() {
+                                                _timer = value!;
+                                              });
+                                            }),
+                                      ),
+                                      const Text(
+                                        '10 mins',
+                                        style: TextStyle(fontSize: 20),
+                                      ),
+                                    ],
+                                  ),
+                                  // todo -> radiobutton 15mins
+
+                                  Row(
+                                    children: [
+                                      Transform.scale(
+                                        scale: 1.5,
+                                        child: Radio(
+                                            activeColor: Colors.green,
+                                            value: VisualType.fifteenMins,
+                                            groupValue: _timer,
+                                            onChanged: (value) {
+                                              setState(() {
+                                                _timer = value!;
+                                              });
+                                            }),
+                                      ),
+                                      const Text(
+                                        '15 mins',
+                                        style: TextStyle(fontSize: 20),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               )
